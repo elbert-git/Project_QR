@@ -5,10 +5,35 @@ this is another self explainer video about qr codes
 what the project needs to is to at the very least to explain how:
 1) how QR codes work
 2) be a well animated and well produced video
-** current Angle
-can you sketch a qr code
-thats the click bait
+** how do we make sure the video is well animated
+*** we use neumorephism the white vacuum wrapped looking
+*** or we can use hyperminimalsitm which is just really well animated minimalism. extremely geometric
 * Curr Todo
 ** research on QR codes
-a qr code playlist
-and a list of questions
+[X] a qr code playlist
+[X] and a list of questions
+[ ] fully understand what qr codes are
+    all notes from all videos
+[x] bp script
+* research
+** youtube videos
+*** james explains: how qr codes are built
+very thorough and clean explanation no fluff. if you want to decode by human eye thisis the Oneal
+*** pillazo: how to decode qr codes by hand
+as the title says it shows a person decoding and explaning how to actually decode a qr code
+*** thio joe: what are those other weird qr codes
+explains all kinds of similar looking barcodes and briefly explains what they are
+you can start
+*** UQRme: how qr codes work
+another no frills explanation very short and sweet
+*** 3blue1brown: how to send a self correcting message
+this 2 part video explains hamming parity thingy how to send a message with some error correction
+
+* script
+** bullet points
+*** how qr codes are ubiquitous elegant solutions widely adopted today
+*** how do qr codes actually work [title card]
+*** brief history of what this evolved from
+*** breaking down all the qr code components
+*** explaining each component
+*** conclusion: someboyd came up with this and it's a ingenious way to send a message
