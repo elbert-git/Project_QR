@@ -1,0 +1,14 @@
+#+TITLE: Project QR
+
+* Project gist
+this is another self explainer video about qr codes
+what the project needs to is to at the very least to explain how:
+1) how QR codes work
+2) be a well animated and well produced video
+** current Angle
+can you sketch a qr code
+thats the click bait
+* Curr Todo
+** research on QR codes
+a qr code playlist
+and a list of questions
