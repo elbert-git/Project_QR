@@ -12,16 +12,14 @@ https://www.qr-code-generator.com/qr-code-marketing/qr-codes-basics/#:~:text=Ver
 just a note: we are using qr code version 3. 29x29 I think
 
 
+music choice
+https://freemusicarchive.org/music/Plurabelle/
+specifically https://freemusicarchive.org/music/Plurabelle/Money_Blood_and_Light/Ropes/
+
+
 --------------------------------------------------------
->>> creating the javascript engine.
-
->> prototype chain
-> create goal states
-> create .animateQR(keyArray:array) func that takes an array of 0s and 1s.
-	get list of which cube to rotate. 
-	rotate them just .rotateX(180deg)
-> modify code to be center pivots.
-
+>>> creating the qr images
+just go through them one by one
 
 
 
@@ -32,3 +30,21 @@ just a note: we are using qr code version 3. 29x29 I think
 -----------------------
 # qr code tutorial
 https://www.youtube.com/watch?v=yg6zjqfNsbM
+
+
+
+---------------------------------
+# list of qr codes
+- Pat - first qr code
+- Pat - payment
+- Pat - information
+- Pat - covid 19
+- Pat - black
+- Pat - array of black and white
+- high - position and rotation
+- high - version
+- high - error correction
+- high - mask
+- high - message itself
+- high - encoding
+- high - every character chained together
