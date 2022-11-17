@@ -12,6 +12,7 @@
     "vite": "^3.0.0"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.6.0",
     "jimp": "^0.16.2",
     "ndarray-pixels": "^1.0.0",
     "qrcode": "^1.5.1",

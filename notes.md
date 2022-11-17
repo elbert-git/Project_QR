@@ -9,7 +9,9 @@ https://www.qr-code-generator.com/qr-code-marketing/qr-codes-basics/#:~:text=Ver
 
 
 
-just a note: we are using qr code version 3. 29x29 I think
+<!-- just a note: we are using qr code version 3. 29x29 I think -->
+just a note: we are using qr code version 4. need to find what is the resolution;
+source for size of verions: https://www.qrcode.com/en/about/version.html
 
 
 music choice
@@ -35,9 +37,6 @@ https://www.youtube.com/watch?v=yg6zjqfNsbM
 
 ---------------------------------
 # list of qr codes
-- Pat - first qr code
-- Pat - payment
-- Pat - information
 - Pat - covid 19
 - Pat - black
 - Pat - array of black and white

@@ -18,3 +18,26 @@ They work by encoding characters into different numbers and using pattern of 8 s
 these 8 squares are then chained together snaking throught the code to finally form the message
 
 all of this to quickly and reliably relay information, easing our daily digital lives. And thats how the QR code works
+
+
+
+
+## website script
+QR codes have become an integral part of our digital lives. A common sight that no one thinks twice about. 
+so this article will be a quick dive into what makes them tick. Shedding some light into how QR codes work
+ 
+A QR code, or a quick response code is essentially 2d array of black and white squares.
+
+they are arranged in a predetermined patterns to allow a scanner such as your phone camera to read a message.
+
+these patterns range in functions such as allowing quick indentificatinos of the qr codes position and rotation.
+
+noting which version of the qr code is being used, 
+
+relaying it's error correction level.
+
+and finally of course the actual message itself
+
+They work by mapping different characters into different numbers and using pattern of 8 squares to convey this number.
+
+all of this to quickly and reliably relay information, easing our daily digital lives. And thats how the QR code works

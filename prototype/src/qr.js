@@ -1,11 +1,42 @@
 import { deg2rad, rad2deg } from "./utilities";
 import { Euler, Group, Mesh, MeshBasicMaterial, PlaneGeometry, Quaternion, SphereGeometry, Vector3 } from "three";
 import Experience from "./experience";
-import * as qr1 from  './qr1.json';
-import * as qr2 from './qr2.json';
+import pat1 from './inputImages/patterns/Pat_ 01_firstPattern.json'
+import pat2 from './inputImages/patterns/Pat_ 02_payment.json'
+import pat3 from './inputImages/patterns/Pat_ 03_information.json'
+import pat4 from './inputImages/patterns/Pat_ 04_covid19.json'
+import pat5 from './inputImages/patterns/Pat_ 04-5_black.json'
+import pat6 from './inputImages/patterns/Pat_06_checker.json'
+import high1 from './inputImages/highlights/High_Position.json'
+import high2 from './inputImages/highlights/High_error.json'
+import high3 from './inputImages/highlights/High_message.json'
+import high4 from './inputImages/highlights/High_01_version.json'
+
+const patternOrder = [pat1, pat2, pat3, pat4, pat5, pat6];
+const highlightOrder = [high1, high2, high3, high4];
 
 export default class QR{
   constructor(width, height){
+    // order of states
+    this.stateIndex = 0;
+    this.orderOfStates = [
+      'pat-4',
+      'pat-0',
+      'pat-1',
+      'pat-2',
+      'pat-3',
+      'pat-4',
+      'pat-5', //black and white checker
+      'pat-0',
+      'high-0',
+      'high-3',
+      'high-2',
+      'high-1',
+      'char',
+      'binary-char',
+      'hide-chars-and-snake'
+    ];
+
     // objects
     this.experience = new Experience();
     this.planesArray = [];
@@ -17,7 +48,7 @@ export default class QR{
     // variables
     this.gap = 0.0;
     this.rotatedQuat = new Quaternion();
-    this.unhighlightedScale = 0.3;
+    this.unhighlightedScale = 0.5;
     this.lerpSpeed = 8;
     // phsysical vars
     this.physicalQRLength = width;
@@ -36,12 +67,15 @@ export default class QR{
     // create qr code
     this.createPlanes();
     
+    this.updatePattern(pat1);
     window.addEventListener('keydown', (e)=>{
-      if(e.key === '1'){this.updateHighlights(qr1)};
-      if(e.key === '2'){this.updateHighlights(qr2)};
-      if(e.key === '3'){this.updatePattern(qr1)};
-      if(e.key === '4'){this.updatePattern(qr2)};
+      if(e.key === '1'){
+        this.callNextState();
+      }
     })
+     
+    // start with black screen
+    this.updatePattern(patternOrder[4]);
   }
   createPlanes(){
     for (let yIndex = 0; yIndex < this.width; yIndex++) {
@@ -158,8 +192,6 @@ export default class QR{
     const arr = data.data;
     const length = this.goalRotations.length;
      
-    //understanding scale
-    console.log(this.planesArray[2][2].scale)
 
     arr.forEach((row, index)=>{
       const newRow = [];
@@ -171,5 +203,47 @@ export default class QR{
        
       this.goalHighlights[index] = newRow;
     });
+  }
+   
+  callNextState(index){
+    // get next index
+    let nextState = null
+    if(index){nextState = index}
+    else{index = this.stateIndex + 1}
+
+    // update state index counter
+    this.stateIndex = index;
+     
+    // get current command
+    const command = this.orderOfStates[index].split('-');
+
+    // match case the index
+    const elBinary = document.querySelector('.binary');
+    const elChar = document.querySelector('.cat');
+    switch(command[0]){
+      case 'pat':
+        console.log('pattern called');
+        this.updatePattern(patternOrder[command[1]])
+        break;
+      case 'high':
+        console.log('high called');
+        this.updateHighlights(highlightOrder[command[1]])
+        break;
+      case 'char':
+        console.log('char called');
+        elChar.classList.toggle('catHide');
+        break;
+      case 'binary':
+        console.log('binary called');
+        elBinary.classList.remove('binaryHide');
+        break;
+      case 'hide':
+        console.log('hide called');
+        elBinary.classList.toggle('binaryHide');
+        elChar.classList.toggle('catHide');
+        break;
+      default:
+        console.log('state broken woops');
+    }
   }
 }

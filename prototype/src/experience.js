@@ -17,15 +17,17 @@ export default class Experience{
     this.currentDelta = 0; this.updateDelta();
 
     this.scene = new Scene();
-    this.camera = new PerspectiveCamera(75, 10/10, 0.1, 1000);
+    this.camera = new PerspectiveCamera(10, 10/10, 0.1, 1000);
     this.canvas = new Canvas(document.querySelector('#canvas'));
-    this.camera.position.set(0, 0 ,30);
+    this.camera.position.set(0, 0 ,225);
     this.orbit = new OrbitControls(this.camera, this.canvas.htmlElement);
+    this.orbit.enableRotate = false;
+    this.orbit.enabled = false;
      
     // prototyping execution
-    this.scene.background = new Color('#e6eaeb');
+    this.scene.background = new Color('#FFFFFF');
     // create object to test
-    this.qr = new QR(29, 29);
+    this.qr = new QR(33, 33);
      
     // start render loop
     this.update();

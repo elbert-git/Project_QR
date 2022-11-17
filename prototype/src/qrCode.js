@@ -1,13 +1,14 @@
 import * as qr from 'qrcode';
 import * as fs from 'fs';
 import Jimp from 'jimp';
+console.clear();
 
 
 async function createQR(string){
-  const data = await qr.toFile('./test.png', string, {margin: 1, version:3});
+  const data = await qr.toFile('./test.png', string, {margin: 1, version:4});
 }
 
-// createQR('https://www.elbertwithane.com');
+// createQR('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 // createQR('https://www.google.com');
 
 
@@ -53,12 +54,43 @@ async function writeQRData(qrArray ,path){
   console.log('written');
 }
 
-(async function(){
-  writeQRData( await readImage('./1.png'), './qr1.json');
-  writeQRData( await readImage('./2.png'), './qr2.json');
+// (async function(){
+//   writeQRData( await readImage('./1.png'), './qr1.json');
+//   writeQRData( await readImage('./2.png'), './qr2.json');
+// })()
+
+
+
+
+// * get list of files in string array
+// const dataPath = './src/inputImages/patterns';
+// fs.readdir(dataPath, (err, files)=>{
+//   files.forEach(async (element) => {
+//     const jsonFileName = element.split('.')[0]
+//     writeQRData(await readImage(dataPath+'/'+element), dataPath+'/'+jsonFileName+'.json');
+//   });
+// } );
+
+//for each file. convert into json
+
+// * create checkerboard pattern
+(()=>{
+  const final = []
+  for (let y = 0; y < 33; y++) {
+    let row = []; 
+    const isEvenY = y%2===0?true:false;
+    for (let x = 0; x < 33; x++) {
+      row.push(
+        x%2===0?'_':'#'
+      )
+    }
+    if(isEvenY){
+      row = row.map((val)=>{
+        return val==='#'?'_':'#';
+      })
+    }
+    final.push(row.toString());
+    
+  }
+  writeQRData(final, './checker.json');
 })()
-
-// write qrs arrays to disk to data
-
-
-
