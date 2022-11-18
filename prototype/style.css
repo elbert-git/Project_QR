@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap');
+
+html{
+  font-size: 1.5em;
+}
+
+*{
+  font-family: 'Tinos', serif;
+}
+
 /* -------------  My css Stuff */
 /* debug */
 .debugRedLine              {outline: solid 3px rgba(255, 0, 0, 0.3);}
@@ -87,18 +97,100 @@ body{
 h1{
   text-align: center;
 }
-
 .centerText{
   text-align: center;
 }
 
-/* *{outline: red solid 3px;} */
+
+
+
+
+
+
+
 
 .contentRoot{
-  width: 20em !important;
-  /* outline: red solid 3px; */
+  max-width: 30em;
 }
 
 .title{
   margin-bottom: 0.5em;
+}
+
+.glide__track{
+  width: 25em !important;
+}
+li{
+  width: 25em !important;
+}
+li div{
+  padding-left: 1em;
+  padding-right: 1em;
+}
+ul{pointer-events: none;}
+
+
+.glideNextPrevButtons{
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.5em;
+  width: 1.5em; height:1.5em;
+
+  transition: 0.3s;
+  transform: scale(1);
+  pointer-events: auto;
+}
+.glideNextPrevButtons:hover{
+  background-color: rgb(146, 146, 146);
+  transform: scale(1.1);
+}
+.glideNextPrevButtons:active{
+  background-color: rgb(74, 74, 74);
+  transform: scale(0.9);
+}
+.glideNextPrevButtons:disabled{
+  pointer-events: none;
+}
+
+
+.glide__bullet{
+  transition: 0.3s;
+  background-color: black;
+  opacity: 0.3;
+  outline: none;
+  border-radius: 50%;
+  width: 0.5em; height: 0.5em;
+  pointer-events: none;
+}
+.glide__bullet--active{
+  opacity: 0.8;
+}
+
+a{
+  color: black
+}
+
+
+
+@media only screen and (max-width: 750px) {
+  html {
+    font-size: 1em !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #canvas{
+    width: 20em;height: 20em;
+  }
+  html {
+    font-size: 0.8em !important;
+  }
+  li div{
+    font-size: 1.5em;
+  }
+  H1{
+    font-size: 3em;
+  }
 }

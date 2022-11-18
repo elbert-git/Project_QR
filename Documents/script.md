@@ -23,21 +23,23 @@ all of this to quickly and reliably relay information, easing our daily digital 
 
 
 ## website script
-QR codes have become an integral part of our digital lives. A common sight that no one thinks twice about. 
-so this article will be a quick dive into what makes them tick. Shedding some light into how QR codes work
- 
-A QR code, or a quick response code is essentially 2d array of black and white squares.
+QR codes have become an integral part of our lives that no one thinks twice about.
+So this article will be a quick dive into what makes them tick.
 
-they are arranged in a predetermined patterns to allow a scanner such as your phone camera to read a message.
+A QR code, or a quick response code is essentially 2D array of black and white squares.
 
-these patterns range in functions such as allowing quick indentificatinos of the qr codes position and rotation.
+They are arranged in a pattern to allow a scanner such as your phone camera to read a message.
 
-noting which version of the qr code is being used, 
+These patterns range in functions such as allowing quick identification of the QR's position and rotation.
 
-relaying it's error correction level.
+Noting which version of the QR code is being used.
 
-and finally of course the actual message itself
+Relaying its error correction level.
 
-They work by mapping different characters into different numbers and using pattern of 8 squares to convey this number.
+And finally of course the actual message itself
 
-all of this to quickly and reliably relay information, easing our daily digital lives. And thats how the QR code works
+It works by mapping different characters into different numbers
+
+Using pattern of 8 squares to convey this number. these patterns are then chained together snaking throught the code to finally form the message
+
+All of this to quickly and reliably relay information, easing our daily digital lives. And thats how the QR code works

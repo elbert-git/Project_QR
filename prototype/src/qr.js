@@ -20,18 +20,13 @@ export default class QR{
     // order of states
     this.stateIndex = 0;
     this.orderOfStates = [
-      'pat-4',
       'pat-0',
-      'pat-1',
-      'pat-2',
-      'pat-3',
-      'pat-4',
       'pat-5', //black and white checker
       'pat-0',
       'high-0',
       'high-3',
-      'high-2',
       'high-1',
+      'high-2',
       'char',
       'binary-char',
       'hide-chars-and-snake'
@@ -68,14 +63,9 @@ export default class QR{
     this.createPlanes();
     
     this.updatePattern(pat1);
-    window.addEventListener('keydown', (e)=>{
-      if(e.key === '1'){
-        this.callNextState();
-      }
-    })
      
     // start with black screen
-    this.updatePattern(patternOrder[4]);
+    this.updatePattern(patternOrder[0]);
   }
   createPlanes(){
     for (let yIndex = 0; yIndex < this.width; yIndex++) {
@@ -214,6 +204,20 @@ export default class QR{
     // update state index counter
     this.stateIndex = index;
      
+    // process state
+    this.processCurrentState(this.stateIndex);
+  }
+   
+  callPreviousState(){
+    // update state index counter
+    const index = this.stateIndex - 1
+    this.stateIndex = index;
+     
+    // process state
+    this.processCurrentState(index);
+  }
+   
+  processCurrentState(index){
     // get current command
     const command = this.orderOfStates[index].split('-');
 
@@ -222,25 +226,48 @@ export default class QR{
     const elChar = document.querySelector('.cat');
     switch(command[0]){
       case 'pat':
-        console.log('pattern called');
+        // patterns
         this.updatePattern(patternOrder[command[1]])
+        // highlights
+        this.updateHighlights(pat5);
+        // additioanls
+        elBinary.classList.add('binaryHide');
+        elChar.classList.add('catHide');
         break;
       case 'high':
-        console.log('high called');
+        // pattern
+        this.updatePattern(patternOrder[0]);
+        // highliights
         this.updateHighlights(highlightOrder[command[1]])
+        // additionals
+        elBinary.classList.add('binaryHide');
+        elChar.classList.add('catHide');
         break;
       case 'char':
-        console.log('char called');
-        elChar.classList.toggle('catHide');
+        // patterns
+        this.updatePattern(patternOrder[0]);
+        // highlights
+        this.updateHighlights(pat5)
+        // additionals
+        elBinary.classList.add('binaryHide');
+        elChar.classList.remove('catHide');
         break;
       case 'binary':
-        console.log('binary called');
+        // pattern
+        this.updatePattern(patternOrder[0]);
+        // highlight
+        this.updateHighlights(pat5);
+        // additionals
         elBinary.classList.remove('binaryHide');
         break;
       case 'hide':
-        console.log('hide called');
-        elBinary.classList.toggle('binaryHide');
-        elChar.classList.toggle('catHide');
+        // pattern 
+        this.updatePattern(patternOrder[0]);
+        // highlight
+        this.updateHighlights(pat5);
+        // additionals
+        elBinary.classList.add('binaryHide');
+        elChar.classList.add('catHide');
         break;
       default:
         console.log('state broken woops');
