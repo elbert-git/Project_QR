@@ -15,6 +15,7 @@
   </head>
   <body>
     <H1 class="title">How the QR code works</H1>
+    <div style="height: 1em;"></div>
     <div id="canvas"></div>
     <div id="threeCharBanner" class="threeCharBanner">
       <div class="cat catHide flex flexAlignCenter flexJustifyCenter">
@@ -28,83 +29,40 @@
         <img src="./src/characterImages/T_B.png" alt="">
       </div>
     </div>
-    <!-- <div id="contentRoot">
-      <div data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
+
+    <div class="contentRoot flex flexColumn flexAlignCenter flexJustifyCenter">
+      <div class="topTrack flex flexAlignCenter flexJustifyCenter">
+        <button class="nextPrevButtons" id="prevButton">&lt;</button>
+        <div class="sliderCanvas cardSize">
+          <div style="left:0" class="sliderScroller flex flexAlignCenter cardSize">
+            <div class="slide cardSize">1</div>
+            <div class="slide cardSize">2</div>
+            <div class="slide cardSize">3</div>
+            <div class="slide cardSize">1</div>
+            <div class="slide cardSize">2</div>
+            <div class="slide cardSize">3</div>
+            <div class="slide cardSize">1</div>
+            <div class="slide cardSize">2</div>
+            <div class="slide cardSize">3</div>
+            <div class="slide cardSize">3</div>
+          </div>
+        </div>
+        <button class="nextPrevButtons" id="nextButton">&gt;</button>
       </div>
-    </div> -->
-    <div class="contentRoot">
-      <div class="glide flex flexColumn flexAlignCenter flexJustifyCenter">
-        <div class="fillWidth flex flexAlignCenter flexJustifyCenter">
-          <div data-glide-el="controls">
-            <button class="glideNextPrevButtons" data-glide-dir="<">&lt;</button>
-          </div>
-
-          <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-              <li class="glide__slide">
-                <div class="centerText">QR codes have become an integral part of our lives that no one thinks twice about. </div>
-                <div style="height: 1em"></div>
-                <div class="centerText">So this article will be a quick dive into what makes them tick.</div>
-              </li>
-              <li class="glide__slide">
-                <div class="centerText">A QR code, or a quick response code is essentially 2D array of black and white squares.</div>
-              </li>
-              <li class="glide__slide">
-                <div class="centerText">They are arranged in a pattern to allow a scanner such as your phone camera to read a message.</div>
-              </li>
-              <li class="glide__slide">
-                <div class="centerText">These patterns range in functions such as allowing quick identification of the QR's position and rotation.</div>
-              </li>
-              <li class="glide__slide">
-                <div class="centerText">Noting which version of the QR code is being used.</div>
-              </li>
-              <li class="glide__slide">
-                <div class="centerText">Relaying its error correction level.</div>
-              </li>
-              <li class="glide__slide">
-                <div class="centerText">And finally of course the actual message itself</div>
-              </li>
-              <li class="glide__slide">
-                <div class="centerText">It works by mapping different characters into different numbers</div>
-              </li>
-              <li class="glide__slide">
-                <div class="centerText">Using pattern of 8 squares to convey this number. these patterns are then chained together snaking throught the code to finally form the message</div>
-              </li>
-              <li class="glide__slide">
-                <div class="centerText">All of this to quickly and reliably relay information, easing our daily digital lives. And thats how the QR code works</div>
-              </li>
-            </ul>
-          </div>
-
-          <div data-glide-el="controls">
-            <button class="glideNextPrevButtons" data-glide-dir=">">&gt;</button>
-          </div> 
-        </div>
-
-
-        <div class="fillWidth flex flexAlignCenter flexJustifyCenter">
-          <div class="glide__bullets" data-glide-el="controls[nav]">
-            <button class="glide__bullet" data-glide-dir="=0"></button>
-            <button class="glide__bullet" data-glide-dir="=1"></button>
-            <button class="glide__bullet" data-glide-dir="=2"></button>
-            <button class="glide__bullet" data-glide-dir="=3"></button>
-            <button class="glide__bullet" data-glide-dir="=4"></button>
-            <button class="glide__bullet" data-glide-dir="=5"></button>
-            <button class="glide__bullet" data-glide-dir="=6"></button>
-            <button class="glide__bullet" data-glide-dir="=7"></button>
-            <button class="glide__bullet" data-glide-dir="=8"></button>
-            <button class="glide__bullet" data-glide-dir="=9"></button>
-          </div>
-        </div>
-
+      <div class="botTrack flex flexAlignCenter flexJustifyCenter">
+        <button class="bullets"></button>
+        <button class="bullets"></button>
+        <button class="bullets"></button>
+        <button class="bullets"></button>
+        <button class="bullets"></button>
+        <button class="bullets"></button>
+        <button class="bullets"></button>
+        <button class="bullets"></button>
+        <button class="bullets"></button>
+        <button class="bullets"></button>
       </div>
     </div>
+
     <div style="height:1em"></div>
     <a href="https://www.google.com" class="videoButton" >Watch the video version</a>
     <script type="module" src="/main.js"></script>

@@ -198,11 +198,11 @@ export default class QR{
   callNextState(index){
     // get next index
     let nextState = null
-    if(index){nextState = index}
-    else{index = this.stateIndex + 1}
+    if(index !== undefined){nextState = index}
+    else{nextState = this.stateIndex + 1}
 
     // update state index counter
-    this.stateIndex = index;
+    this.stateIndex = nextState;
      
     // process state
     this.processCurrentState(this.stateIndex);
