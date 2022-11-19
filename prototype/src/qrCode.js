@@ -73,24 +73,39 @@ async function writeQRData(qrArray ,path){
 
 //for each file. convert into json
 
-// * create checkerboard pattern
+// // * create checkerboard pattern
+// (()=>{
+//   const final = []
+//   for (let y = 0; y < 33; y++) {
+//     let row = []; 
+//     const isEvenY = y%2===0?true:false;
+//     for (let x = 0; x < 33; x++) {
+//       row.push(
+//         x%2===0?'_':'#'
+//       )
+//     }
+//     if(isEvenY){
+//       row = row.map((val)=>{
+//         return val==='#'?'_':'#';
+//       })
+//     }
+//     final.push(row.toString());
+    
+//   }
+//   writeQRData(final, './checker.json');
+// })()
+
+// create uniform no highlight
 (()=>{
   const final = []
   for (let y = 0; y < 33; y++) {
     let row = []; 
     const isEvenY = y%2===0?true:false;
     for (let x = 0; x < 33; x++) {
-      row.push(
-        x%2===0?'_':'#'
-      )
-    }
-    if(isEvenY){
-      row = row.map((val)=>{
-        return val==='#'?'_':'#';
-      })
+      row.push("_")
     }
     final.push(row.toString());
     
   }
-  writeQRData(final, './checker.json');
+  writeQRData(final, './noHighlight.json');
 })()

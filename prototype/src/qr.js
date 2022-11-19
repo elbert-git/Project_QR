@@ -11,9 +11,10 @@ import high1 from './inputImages/highlights/High_Position.json'
 import high2 from './inputImages/highlights/High_error.json'
 import high3 from './inputImages/highlights/High_message.json'
 import high4 from './inputImages/highlights/High_01_version.json'
+import high5 from './inputImages/highlights/High_noHighlight.json'
 
 const patternOrder = [pat1, pat2, pat3, pat4, pat5, pat6];
-const highlightOrder = [high1, high2, high3, high4];
+const highlightOrder = [high1, high2, high3, high4, high5];
 
 export default class QR{
   constructor(width, height){
@@ -25,16 +26,18 @@ export default class QR{
       'pat-1',
       'pat-2',
       'pat-3',
+      'pat-0',
       'pat-4',
       'pat-5', //black and white checker
       'pat-0',
       'high-0',
       'high-3',
-      'high-2',
       'high-1',
+      'high-2', // highlight message
       'char',
       'binary-char',
-      'hide-chars-and-snake'
+      'hide-chars-and-snake',
+      'final'
     ];
 
     // objects
@@ -231,17 +234,23 @@ export default class QR{
         break;
       case 'char':
         console.log('char called');
-        elChar.classList.toggle('catHide');
+        elChar.classList.remove('catHide');
+        this.updateHighlights(high5);
         break;
       case 'binary':
         console.log('binary called');
         elBinary.classList.remove('binaryHide');
+        this.updateHighlights(high5);
         break;
       case 'hide':
         console.log('hide called');
-        elBinary.classList.toggle('binaryHide');
-        elChar.classList.toggle('catHide');
+        elBinary.classList.add('binaryHide');
+        elChar.classList.add('catHide');
+        this.updateHighlights(high3);
         break;
+      case "final":
+        console.log('final');
+        this.updateHighlights(pat5);
       default:
         console.log('state broken woops');
     }

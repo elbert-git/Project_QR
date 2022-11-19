@@ -53,12 +53,12 @@ body{
 }
 
 #canvas{
-  height: 10em; 
-  width: 10em;
+  height: 50em; 
+  width: 50em;
 }
 
 .threeCharBanner img{
-  width: 3em;
+  width: 10em;
 }
 
 .threeCharBanner{
